@@ -1,0 +1,126 @@
+.hr-stages-section {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Stage Buttons Container */
+.stage-buttons {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.stage-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+.stage-buttons::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.stage-buttons::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+/* Individual Stage Button */
+.stage-btn {
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.stage-btn:hover {
+  background-color: #e8e8e8;
+}
+
+.stage-btn.active {
+  background-color: #0073b1;
+  color: white;
+  font-weight: 500;
+}
+
+/* Shortlist Button */
+.shortlist-btn {
+  margin-left: auto;
+  background-color: #6a0dad;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.shortlist-btn:hover {
+  background-color: #580d99;
+}
+
+/* Candidates Table */
+.stage-candidates {
+  margin-top: 20px;
+}
+
+.stage-candidates table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.stage-candidates th,
+.stage-candidates td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.stage-candidates th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+.passed {
+  color: green;
+  font-weight: 500;
+}
+
+.failed {
+  color: orange;
+  font-weight: 500;
+}
+
+
+.shortlist-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.shortlist-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.shortlist-btn:hover {
+  background-color: #580d99;
+}
+

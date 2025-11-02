@@ -1,0 +1,154 @@
+.jobs-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+  padding: 20px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.toggle-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background-color: #0073b1;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* Sort Section */
+.sort-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sort-section select {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Job Cards */
+.job-list {
+  border-top: 1px solid #eee;
+}
+
+.job-card {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.job-card:hover {
+  background-color: #f9f9f9;
+}
+
+.job-card h2 {
+  font-size: 18px;
+  color: #004182;
+  margin-bottom: 6px;
+}
+
+.job-info {
+  display: flex;
+  gap: 15px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.job-office {
+  font-size: 13px;
+  color: #777;
+}
+
+.clicked-job {
+  background-color: #f3ecfe;
+  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.2);
+}
+
+
+.jobs-header .active-jobs-btn,
+.jobs-header .archive-jobs-btn {
+  margin: 0px 20px;
+  color: #555;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease-in-out;
+  padding-bottom: 4px;
+}
+
+.jobs-header .active-jobs-btn:hover,
+.jobs-header .archive-jobs-btn:hover {
+  color: #2563eb;
+}
+
+.jobs-header .active-jobs-btn.active,
+.jobs-header .archive-jobs-btn.active {
+  color: #2563eb;
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+}

@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useEffect, useState } from 'react'
 import './App.css'
+import Navbar from './components/navbar'
+import Main from './components/main'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isHR, setIsHR] = useState(false);
+
+  useEffect(() => {
+    alert(
+      "Hi, I’m Tejas Kamble. Some parts of this assignment are still in progress — I’m actively working to complete them soon.\n\nYou can still take a look in the meantime."
+    );
+  }, []);
+
 
   return (
     <>
-      <p className='msg'>Don't judge me right now. I am busy in family function.</p>
-      <p className='msg'>You will see everything completed on <span className='deadline'>1st November</span>.</p>
+      <Navbar isHR={isHR} setIsHR={setIsHR} />
+      <Main isHR={isHR}/><></>
     </>
   )
 }
