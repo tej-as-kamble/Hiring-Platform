@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./navbar.css";
 import Logo from "../assets/logo.jpg";
 
 const Navbar = ({isHR, setIsHR}) => {
