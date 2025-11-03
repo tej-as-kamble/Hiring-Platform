@@ -2,30 +2,34 @@ import React, { useState } from "react";
 import "./hrjobstages.css";
 
 const HRJobStages = ({ job }) => {
-  // job.stages = [{ name: "Stage 1", candidates: [...] }, ...]
   const [activeStage, setActiveStage] = useState(0);
 
-  const currentStage = job.stages[activeStage];
+  const currentStageName = job.totalStages[activeStage];
+  const currentStageCandidates = job.candidateList[activeStage]?.candidates || [];
 
   return (
     <div className="hr-stages-section">
+      {/* Stage Tabs */}
       <div className="stage-buttons">
-        {job.stages.map((stage, index) => (
+        {job.totalStages.map((stageName, index) => (
           <div
             key={index}
             className={`stage-btn ${activeStage === index ? "active" : ""}`}
             onClick={() => setActiveStage(index)}
           >
-            {stage.name}
+            {stageName}
           </div>
         ))}
       </div>
+
+      {/* Shortlist Button */}
       <div className="shortlist-div">
         <button className="shortlist-btn">Make shortlist for Next Stage</button>
       </div>
 
+      {/* Candidates Table */}
       <div className="stage-candidates">
-        <h3>{currentStage.name} Candidates</h3>
+        <h3>{currentStageName} Candidates</h3>
         <table>
           <thead>
             <tr>
@@ -36,22 +40,30 @@ const HRJobStages = ({ job }) => {
             </tr>
           </thead>
           <tbody>
-            {currentStage.candidates.map((c, idx) => (
-              <tr key={idx}>
-                <td>{c.name}</td>
-                <td>
-                  <a href={c.resume} target="_blank" rel="noreferrer">
-                    View Resume
-                  </a>
-                </td>
-                <td>{c.score}</td>
-                <td>
-                  <span className={c.score >= 70 ? "passed" : "failed"}>
-                    {c.score >= 70 ? "Passed" : "Pending"}
-                  </span>
+            {currentStageCandidates.length > 0 ? (
+              currentStageCandidates.map((c, idx) => (
+                <tr key={idx}>
+                  <td>{c.name}</td>
+                  <td>
+                    <a href="/" target="_blank" rel="noreferrer">
+                      View Resume
+                    </a>
+                  </td>
+                  <td>{c.score}</td>
+                  <td>
+                    <span className={c.score >= 70 ? "passed" : "failed"}>
+                      {c.score >= 70 ? "Passed" : "Pending"}
+                    </span>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" style={{ textAlign: "center" }}>
+                  No candidates in this stage.
                 </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

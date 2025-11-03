@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import "../jobs.css";
 
-function Jobs({jobID, setJobID}) {
+function Jobs({jobID, setJobID, stutusChange}) {
   const [jobList, setJobList] = useState([]);
 
   useEffect(() => {
     fetch("/api/jobs")
       .then((res) => res.json())
       .then((data) => {
-        setJobList(data.jobs)
+        const activeJobs = data.jobs.filter((job) => job.status === true);
+        setJobList(activeJobs)
       })
       .catch((err) => console.error("Error fetching jobs:", err));
-  }, []);
+  }, [stutusChange]);
 
   return (
     <div className="jobs-container">

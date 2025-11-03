@@ -8,7 +8,7 @@ export const jobList = [
     profession: "Software Engineering",
     discipline: "Software Engineering",
     employmentType: "Full-Time",
-    status: true,
+    status: false,
   },
   {
     jobID: 1002,
@@ -63,7 +63,7 @@ export const jobList = [
     profession: "Product Design",
     discipline: "UI/UX",
     employmentType: "Contract",
-    status: true,
+    status: false,
   },
   {
     jobID: 1007,
@@ -368,94 +368,385 @@ export const jobDetails = [
 export const jobApplications = [
   {
     jobID: 1001,
-    totalStages: 3,
-    candidateList: {
-      stage1: [
-        { name: "Aarav Patel", score: 90, status: true },
-        { name: "Ananya Gupta", score: 74, status: false },
-        { name: "Mitali Verma", score: 68, status: false },
-        { name: "Riya Sharma", score: 88, status: true },
-        { name: "Aditya Mehta", score: 84, status: true },
-        { name: "Pranav Deshmukh", score: 70, status: false },
-        { name: "Sneha Nair", score: 77, status: true },
-        { name: "Ananya Gupta", score: 74, status: false },
-        { name: "Mitali Verma", score: 68, status: false },
-        { name: "Yash Agarwal", score: 65, status: false },
-        { name: "Neha Reddy", score: 63, status: false },
-        { name: "Kunal Joshi", score: 80, status: true },
-      ],
-      stage2: [
-        { name: "Aarav Patel", score: 87, status: true },
-        { name: "Aditya Mehta", score: 80, status: false },
-        { name: "Riya Sharma", score: 83, status: true },
-        { name: "Kunal Joshi", score: 77, status: false },
-        { name: "Sneha Nair", score: 73, status: false },
-      ],
-      stage3: [
-        { name: "Aarav Patel", score: 92, status: true },
-        { name: "Riya Sharma", score: 89, status: true },
-      ],
-    },
+    totalStages: [
+      "Resume Screening",
+      "Technical Interview",
+      "HR Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Aarav Patel", score: 90, status: true },
+          { name: "Riya Sharma", score: 78, status: false },
+          { name: "Ananya Gupta", score: 83, status: true },
+          { name: "Mitali Verma", score: 75, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Aarav Patel", score: 88, status: true },
+          { name: "Ananya Gupta", score: 80, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Aarav Patel", score: 91, status: true },
+        ],
+      },
+    ],
   },
   {
     jobID: 1002,
-    totalStages: 3,
-    candidateList: {
-      stage1: [
-        { name: "Devika Rao", score: 88, status: true },
-        { name: "Manav Jain", score: 85, status: true },
-        { name: "Ishita Singh", score: 82, status: true },
-        { name: "Rohan Kulkarni", score: 78, status: true },
-        { name: "Sanya Patel", score: 75, status: true },
-        { name: "Tanvi Kapoor", score: 72, status: true },
-        { name: "Arjun Nair", score: 70, status: true },
-        { name: "Simran Das", score: 68, status: true },
-        { name: "Kartik Menon", score: 65, status: true },
-        { name: "Megha Pillai", score: 63, status: true },
-      ],
-      stage2: [
-        { name: "Devika Rao", score: 86, status: true },
-        { name: "Manav Jain", score: 82, status: true },
-        { name: "Ishita Singh", score: 79, status: true },
-        { name: "Rohan Kulkarni", score: 76, status: true },
-        { name: "Sanya Patel", score: 74, status: true },
-      ],
-      stage3: [
-        { name: "Devika Rao", score: 91, status: true },
-        { name: "Manav Jain", score: 88, status: true },
-      ],
-    },
+    totalStages: [
+      "Portfolio Review",
+      "Technical Assessment",
+      "Live Coding Round",
+      "HR Discussion",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Ishita Deshmukh", score: 85, status: true },
+          { name: "Rohit Nair", score: 79, status: true },
+          { name: "Karan Joshi", score: 72, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Ishita Deshmukh", score: 87, status: true },
+          { name: "Rohit Nair", score: 74, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Ishita Deshmukh", score: 90, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Ishita Deshmukh", score: 94, status: true },
+        ],
+      },
+    ],
   },
   {
     jobID: 1003,
-    totalStages: 3,
-    candidateList: {
-      stage1: [
-        { name: "Aditi Joshi", score: 89, status: true },
-        { name: "Nikhil Sharma", score: 86, status: true },
-        { name: "Rachit Bansal", score: 83, status: true },
-        { name: "Swati Iyer", score: 79, status: true },
-        { name: "Vikas Rao", score: 76, status: true },
-        { name: "Priya Patel", score: 73, status: true },
-        { name: "Kiran Desai", score: 70, status: true },
-        { name: "Sarthak Malhotra", score: 68, status: true },
-        { name: "Neel Mehta", score: 66, status: true },
-        { name: "Shivani Jain", score: 64, status: true },
-      ],
-      stage2: [
-        { name: "Aditi Joshi", score: 87, status: true },
-        { name: "Nikhil Sharma", score: 83, status: true },
-        { name: "Rachit Bansal", score: 80, status: true },
-        { name: "Swati Iyer", score: 78, status: true },
-        { name: "Vikas Rao", score: 75, status: true },
-      ],
-      stage3: [
-        { name: "Aditi Joshi", score: 90, status: true },
-        { name: "Nikhil Sharma", score: 88, status: true },
-      ],
-    },
+    totalStages: [
+      "Aptitude Test",
+      "Data Challenge",
+      "Final Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Mehul Reddy", score: 84, status: true },
+          { name: "Simran Kaur", score: 78, status: false },
+          { name: "Aditi Sharma", score: 81, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Mehul Reddy", score: 89, status: true },
+          { name: "Aditi Sharma", score: 85, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Mehul Reddy", score: 88, status: true },
+          { name: "Aditi Sharma", score: 86, status: false },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1004,
+    totalStages: [
+      "Online Assessment",
+      "Technical Interview 1",
+      "Technical Interview 2",
+      "HR Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Rahul Deshmukh", score: 85, status: true },
+          { name: "Pooja Sharma", score: 81, status: true },
+          { name: "Karan Patel", score: 78, status: true },
+          { name: "Isha Nair", score: 74, status: true },
+          { name: "Ankit Verma", score: 70, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rahul Deshmukh", score: 82, status: true },
+          { name: "Pooja Sharma", score: 79, status: true },
+          { name: "Karan Patel", score: 75, status: true },
+          { name: "Isha Nair", score: 70, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rahul Deshmukh", score: 84, status: true },
+          { name: "Pooja Sharma", score: 80, status: false },
+          { name: "Karan Patel", score: 78, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rahul Deshmukh", score: 89, status: true },
+          { name: "Karan Patel", score: 85, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1005,
+    totalStages: [
+      "Resume Screening",
+      "Technical Round 1",
+      "ML Challenge",
+      "System Design",
+      "Final HR",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Arjun Sharma", score: 88, status: true },
+          { name: "Priya Singh", score: 82, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Arjun Sharma", score: 90, status: true },
+          { name: "Priya Singh", score: 75, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Arjun Sharma", score: 92, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Arjun Sharma", score: 89, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Arjun Sharma", score: 95, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1006,
+    totalStages: [
+      "Portfolio Evaluation",
+      "Design Task",
+      "Managerial Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Sneha Kulkarni", score: 85, status: true },
+          { name: "Aditya Jain", score: 70, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Sneha Kulkarni", score: 90, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Sneha Kulkarni", score: 88, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1007,
+    totalStages: [
+      "Technical Screening",
+      "Automation Task",
+      "System Architecture Round",
+      "Final Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Kavya Iyer", score: 84, status: true },
+          { name: "Aman Tiwari", score: 78, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Kavya Iyer", score: 88, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Kavya Iyer", score: 85, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Kavya Iyer", score: 89, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1008,
+    totalStages: [
+      "Testing Assignment",
+      "Technical Interview",
+      "HR Discussion",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Rahul Desai", score: 80, status: true },
+          { name: "Neha Pandey", score: 72, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rahul Desai", score: 86, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rahul Desai", score: 90, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1009,
+    totalStages: [
+      "Screening Test",
+      "Frontend Coding",
+      "Backend Coding",
+      "Final Round",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Mitali Verma", score: 79, status: true },
+          { name: "Dev Patel", score: 73, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Mitali Verma", score: 83, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Mitali Verma", score: 88, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Mitali Verma", score: 91, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1010,
+    totalStages: [
+      "Resume Screening",
+      "Cloud Fundamentals Test",
+      "Architecture Design",
+      "Leadership Interview",
+      "Final HR",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Rohan Bhat", score: 90, status: true },
+          { name: "Isha Malhotra", score: 84, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rohan Bhat", score: 93, status: true },
+          { name: "Isha Malhotra", score: 81, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rohan Bhat", score: 88, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rohan Bhat", score: 91, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Rohan Bhat", score: 95, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1011,
+    totalStages: [
+      "Technical Screening",
+      "Database Optimization Task",
+      "Final Discussion",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Kiran Kumar", score: 78, status: true },
+          { name: "Nikita Jain", score: 72, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Kiran Kumar", score: 85, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Kiran Kumar", score: 89, status: true },
+        ],
+      },
+    ],
+  },
+  {
+    jobID: 1012,
+    totalStages: [
+      "Aptitude Round",
+      "Case Study Presentation",
+      "HR Interview",
+    ],
+    candidateList: [
+      {
+        candidates: [
+          { name: "Sanya Agarwal", score: 82, status: true },
+          { name: "Tushar Verma", score: 75, status: false },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Sanya Agarwal", score: 88, status: true },
+        ],
+      },
+      {
+        candidates: [
+          { name: "Sanya Agarwal", score: 92, status: true },
+        ],
+      },
+    ],
   },
 ];
+
 
 export const assessments = [
   {

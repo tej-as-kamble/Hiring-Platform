@@ -79,3 +79,14 @@
   background-color: rgba(255, 0, 0, 0.08);
   transform: translateY(-1px);
 }
+
+#create-job-btn {
+  color: white;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 6px 10px;
+  background-color: orange;
+  width: 150px;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}

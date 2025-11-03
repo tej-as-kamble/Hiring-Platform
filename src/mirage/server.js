@@ -38,7 +38,8 @@ export function makeServer({ environment = "development" } = {}) {
         this.namespace = "api";
 
         this.get("/jobs", (schema) => schema.jobs.all());
-        this.get("/jobs/:jobID", (schema, request) => {
+
+        this.get("/jobStud/:jobID", (schema, request) => {
             let jobID = parseInt(request.params.jobID);
 
             let job = schema.jobs.findBy({ jobID });
@@ -52,6 +53,31 @@ export function makeServer({ environment = "development" } = {}) {
             job: job.attrs,
             jobDetail: jobDetail ? jobDetail.attrs : null,
             };
+        });
+
+        this.get("/jobHR/:jobID", (schema, request) => {
+            let jobID = parseInt(request.params.jobID);
+
+            let job = schema.jobs.findBy({ jobID });
+            if (!job) {
+                return { error: `Job with ID ${jobID} not found` };
+            }
+
+            const jobApplication = schema.jobApplications.findBy({ jobID });
+
+            return {
+                job: job.attrs,
+                jobApplication: jobApplication ? jobApplication.attrs : null,
+            };
+        });
+
+        this.put("/jobHR/:jobID/status", (schema, request) => {
+            const jobID = request.params.jobID;
+
+            let job = schema.jobs.findBy({jobID});
+            job.update({ status: !job.status });
+
+            return job.attrs;
         });
     },
   });

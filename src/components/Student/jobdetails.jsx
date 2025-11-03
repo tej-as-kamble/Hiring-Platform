@@ -9,7 +9,7 @@ function StudJobDetails({ jobID }) {
     if (!jobID) return;
     setLoad(true);
 
-    fetch(`/api/jobs/${jobID}`)
+    fetch(`/api/jobStud/${jobID}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);

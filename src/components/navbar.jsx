@@ -15,6 +15,7 @@ const Navbar = ({isHR, setIsHR}) => {
             </div>
 
             <ul className="nav-links">
+                {isHR ? <li><button id="create-job-btn">Create New Job</button></li> : <></>}
                 <li><button>Careers Home</button></li>
                 <li><button>About us</button></li>
                 <li><button>Services</button></li>
