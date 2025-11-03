@@ -7,7 +7,8 @@ import HRJobDetails from "./HR/jobdetails";
 import { useState } from "react";
 
 const Main = ({isHR}) => {
-  const [jobID, setJobID] = useState(null);
+  const [jobIDStud, setJobIDStud] = useState(null);
+  const [jobIDHR, setJobIDHR] = useState(null);
 
 
   const jobList = [
@@ -438,10 +439,10 @@ const Main = ({isHR}) => {
 
       <div className="bottom-section">
         <div className="jobs-section">
-          {isHR ? <HRJobs jobID={jobID} setJobID={setJobID} jobList={jobList}/> : <StudJobs jobID={jobID} setJobID={setJobID} jobList={jobList}/>}
+          {isHR ? <HRJobs jobID={jobIDHR} setJobID={setJobIDHR} jobList={jobList}/> : <StudJobs jobID={jobIDStud} setJobID={setJobIDStud}/>}
         </div>
         <div className="job-detail-section jobdetails-container">
-          {isHR ? <HRJobDetails jobID={jobID} jobList={jobList}/> : <StudJobDetails jobID={jobID} jobList={jobList}/>}
+          {isHR ? <HRJobDetails jobID={jobIDHR} jobList={jobList}/> : <StudJobDetails jobID={jobIDStud}/>}
         </div>
       </div>
     </div>

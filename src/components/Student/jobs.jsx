@@ -1,11 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../jobs.css";
 
-function Jobs({jobID, setJobID, jobList}) {
+function Jobs({jobID, setJobID}) {
+  const [jobList, setJobList] = useState([]);
 
-    // useEffect(()=>{
-    //     console.log(jobID)
-    // }, [jobID])
+  useEffect(() => {
+    fetch("/api/jobs")
+      .then((res) => res.json())
+      .then((data) => {
+        setJobList(data.jobs)
+      })
+      .catch((err) => console.error("Error fetching jobs:", err));
+  }, []);
 
   return (
     <div className="jobs-container">
@@ -29,7 +35,7 @@ function Jobs({jobID, setJobID, jobList}) {
 
       <div className="job-list">
         {jobList.map((job, index) => (
-          <div key={index} className={`job-card ${index === jobID ? "clicked-job" : ""}`} onClick={() => setJobID(index)}>
+          <div key={index} className={`job-card ${job.jobID === jobID ? "clicked-job" : ""}`} onClick={() => setJobID(job.jobID)}>
             <h2>{job.title}</h2>
             <div className="job-info">
               <p>📍 {job.location}</p>

@@ -39,6 +39,7 @@
 }
 
 .apply-btn {
+  width: 100px;
   background-color: #5c2d91;
   color: white;
   border: none;
@@ -46,6 +47,10 @@
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.applied-p {
+  color: red;
 }
 
 .save-btn {
@@ -122,6 +127,7 @@
   display: flex;
   gap: 12px;
   margin-top: 10px;
+  align-items: center;
 }
 
 .jobdetails-actions button {
